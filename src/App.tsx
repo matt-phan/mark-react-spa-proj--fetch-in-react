@@ -20,7 +20,7 @@ function App() {
     console.log("I am being clicked!");
     fetch("https://dog.ceo/api/breeds/image/random")
       .then((response) => response.json())
-      .then((jsonBody: Dog[]) => setDog(jsonBody[0]));
+      .then((jsonBody: Dog) => setDog(jsonBody));
   };
 
   console.log(dog);
@@ -29,11 +29,9 @@ function App() {
     return (
       <div>
         <h1>Dog App</h1>
-        <details>
-          <img src={dog.message} alt="dog" />
-        </details>
+        <img src={dog.message} alt="dog" />
         <hr />
-        <button onClick={handleGetDog}>Get another joke</button>
+        <button onClick={handleGetDog}>Get another dog</button>
       </div>
     );
   } else {
