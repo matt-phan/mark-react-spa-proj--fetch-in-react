@@ -2,7 +2,7 @@ import { useState } from "react";
 
 interface Dog {
   message: string;
-  status?: string;
+  status: string;
 }
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
   // };
 
   const handleGetDog = () => {
+    console.log("I am being clicked!");
     fetch("https://dog.ceo/api/breeds/image/random")
       .then((response) => response.json())
       .then((jsonBody: Dog[]) => setDog(jsonBody[0]));
